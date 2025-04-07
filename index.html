@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多格式音訊轉換器</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>多格式音訊轉換器</h1>
+        
+        <div class="settings-container">
+            <h2>轉換設定</h2>
+            <div class="settings-row">
+                <div class="settings-group">
+                    <label for="output-format">輸出格式:</label>
+                    <select id="output-format">
+                        <option value="mp3" selected>MP3</option>
+                        <option value="wav">WAV</option>
+                        <option value="ogg">OGG</option>
+                    </select>
+                </div>
+                <div class="settings-group">
+                    <label for="audio-quality">音訊品質:</label>
+                    <input type="range" id="audio-quality" min="96" max="320" step="32" value="192">
+                    <div id="quality-value" class="range-value">192 kbps</div>
+                </div>
+                <div class="settings-group">
+                    <label for="sample-rate">取樣率:</label>
+                    <select id="sample-rate">
+                        <option value="44100">44.1 kHz</option>
+                        <option value="48000" selected>48 kHz</option>
+                        <option value="96000">96 kHz</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div id="upload-container" class="upload-container">
+            <div class="icon">📁</div>
+            <p>點擊或拖放影片檔案到這裡</p>
+            <p class="format-hint">支援的格式: MP4, AVI, MOV, WebM, MKV, FLV, WMV</p>
+            <input type="file" id="file-input" accept="video/*" multiple />
+            <button id="upload-btn" class="btn">選擇檔案</button>
+        </div>
+        
+        <div id="file-list" class="file-list" style="display: none;">
+            <!-- 檔案列表會在這裡動態產生 -->
+        </div>
+        
+        <div id="status"></div>
+        
+        <div id="overall-progress-container" class="progress-container">
+            <p>總體進度:</p>
+            <div class="progress-bar">
+                <div id="overall-progress" class="progress"></div>
+            </div>
+        </div>
+        
+        <div class="button-container">
+            <button id="convert-all-btn" class="btn" disabled>全部轉換</button>
+            <button id="clear-all-btn" class="btn btn-warning" disabled>清除所有檔案</button>
+        </div>
+        
+        <div id="download-all-container">
+            <button id="download-all-btn" class="btn btn-success">下載所有檔案 (ZIP)</button>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 多格式音訊轉換器</p>
+        <p>此應用程式在您的瀏覽器中處理所有轉換，不會上傳檔案到伺服器</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

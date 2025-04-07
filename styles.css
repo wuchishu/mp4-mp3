@@ -1,0 +1,299 @@
+/* 基本樣式 */
+body {
+    font-family: 'Microsoft JhengHei', Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+/* 上傳區域 */
+.upload-container {
+    border: 2px dashed #3498db;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-container:hover {
+    background-color: #f0f8ff;
+}
+
+#file-input {
+    display: none;
+}
+
+.format-hint {
+    font-size: 14px;
+    color: #777;
+}
+
+/* 按鈕樣式 */
+.btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.btn:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+.btn-success {
+    background-color: #2ecc71;
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+}
+
+.btn-warning {
+    background-color: #e67e22;
+}
+
+.btn-warning:hover {
+    background-color: #d35400;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 進度條 */
+.progress-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #2ecc71;
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* 檔案列表 */
+.file-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.file-item:last-child {
+    border-bottom: none;
+}
+
+.file-item .file-name {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.file-item .file-status {
+    min-width: 100px;
+    text-align: center;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.file-status.pending {
+    background-color: #f0f0f0;
+    color: #7f8c8d;
+}
+
+.file-status.converting {
+    background-color: #3498db;
+    color: white;
+}
+
+.file-status.completed {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.file-status.failed {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* 設定區域 */
+.settings-container {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.settings-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.settings-group {
+    flex: 1;
+    min-width: 200px;
+    margin: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select, input[type="range"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.range-value {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.icon {
+    font-size: 36px;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+#status {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#download-all-container {
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+
+.download-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.download-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 3px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.download-btn:hover {
+    background-color: #27ae60;
+}
+
+.remove-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 3px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .settings-row {
+        flex-direction: column;
+    }
+    .settings-group {
+        margin-bottom: 15px;
+    }
+}
